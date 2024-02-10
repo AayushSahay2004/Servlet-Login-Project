@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Login</title>
+</head>
+<body>
+    <h1>Successful Login</h1>
+    <p>Hello <span id="username"></span>, welcome!</p>
+    
+     <script>
+        // Function to retrieve URL parameter by name
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get the username parameter from the URL
+        var username = getUrlParameter('username');
+
+        // Display the username on the page
+        document.getElementById('username').textContent = username;
+    </script>
+</body>
+</html>
